@@ -12,5 +12,5 @@ ssl passthrough has to be enabled for argocd grpc to work. The configuration pro
 # How to run
 All the above changes are already made in the files. To deploy nginx ingress, execute:
 
-> cd nginx-ingress
+> cd nginx-ingress <br>
 > k apply -k .
