@@ -25,7 +25,7 @@ The documentation only covers configuration required for web sso integration. Ar
     d) Go to Client Scopes tab - In the Setup sub tab, groups will be in available client scopes. Add this to default client scopes (PS: It can also be added in optional client scopes)<br>
     e) Go to credentials tab and copy the secret.<br>
     f) Get the base64 encoded version of this secret using:<br>
-    > echo '<secret>' | base64 <br>
+    > echo '{client secret}' | base64 <br>
 
     g) Copy the base64 encoded secret and update the argocd-secret-patch.yaml file. Set the value of oidc.keycloak.clientSecret as the base64 encoded secret<br>
 
