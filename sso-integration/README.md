@@ -18,24 +18,24 @@ After loging into the keyclaok UI, there will be master with a small dropdown ar
 ## Create clients
 The documentation only covers configuration required for web sso integration. Argocd cli and web needs different client. As web follows Confidential access-type while cli follows public access-type based on PKCE.
 
-1. Create web client:
-    a) Name will be argocd
-    b) root url is the url of argocd instance which in this example is https://argo.127-0-0-1.sslip.io and press save
-    c) On settings page, change the AccessType to confidential. Redirect url to: https://argo.127-0-0-1.sslip.io/auth/callback and base url as /applications. Click on save.
-    d) Go to Client Scopes tab - In the Setup sub tab, groups will be in available client scopes. Add this to default client scopes (PS: It can also be added in optional client scopes)
-    e) Go to credentials tab and copy the secret.
-    f) Get the base64 encoded version of this secret using:
+1. Create web client:<br>
+    a) Name will be argocd<br>
+    b) root url is the url of argocd instance which in this example is https://argo.127-0-0-1.sslip.io and press save<br>
+    c) On settings page, change the AccessType to confidential. Redirect url to: https://argo.127-0-0-1.sslip.io/auth/callback and base url as /applications. Click on save.<br>
+    d) Go to Client Scopes tab - In the Setup sub tab, groups will be in available client scopes. Add this to default client scopes (PS: It can also be added in optional client scopes)<br>
+    e) Go to credentials tab and copy the secret.<br>
+    f) Get the base64 encoded version of this secret using:<br>
     > echo '<secret>' | base64 <br>
 
-    g) Copy the base64 encoded secret and update the argocd-secret-patch.yaml file. Set the value of oidc.keycloak.clientSecret as the base64 encoded secret
+    g) Copy the base64 encoded secret and update the argocd-secret-patch.yaml file. Set the value of oidc.keycloak.clientSecret as the base64 encoded secret<br>
 
 2. Create cli client
-    a) Create anothe cli client and name it argocdcli and root url as 'https://argo.127-0-0-1.sslip.io'
-    b) Keep Access Type to public
-    c) Set Redirect URI to http://localhost:8085/auth/callback [This is required because argocd cli opens a tunnel to localhost for sso flow]
-    d) Base URL remains as /applications
-    e) In advanced settings, set Proof Key for Code Exchange Code Challenge Method as S256 and press save.
-    f) Now go to client scopes and add groups
+    a) Create anothe cli client and name it argocdcli and root url as 'https://argo.127-0-0-1.sslip.io'<br>
+    b) Keep Access Type to public<br>
+    c) Set Redirect URI to http://localhost:8085/auth/callback [This is required because argocd cli opens a tunnel to localhost for sso flow]<br>
+    d) Base URL remains as /applications<br>
+    e) In advanced settings, set Proof Key for Code Exchange Code Challenge Method as S256 and press save.<br>
+    f) Now go to client scopes and add groups<br>
 
 # ArgoCD Configuration
 
