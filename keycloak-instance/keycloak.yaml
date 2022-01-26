@@ -1,0 +1,17 @@
+apiVersion: keycloak.org/v1alpha1
+kind: Keycloak
+metadata:
+  name: sso-keycloak
+  namespace: keycloak
+  labels:
+    app: sso
+spec:
+  instances: 1
+  externalAccess:
+    enabled: True
+    host: learnk8s.co.in
+  podDisruptionBudget:
+    enabled: True
+  # User needs to provision the external database
+  externalDatabase:
+    enabled: True

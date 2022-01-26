@@ -5,7 +5,7 @@ https://www.sumologic.com/blog/kubernetes-deploy-postgres/
 > cd postgres <br>
 > kubectl apply -k .
 
-Please note the database objects will be created in keycloak database
+Please note the database objects will be created in keycloak namespace
 
 # For testing inside kubernetes cluster,
  > kubectl apply -f psql-test-pod.yaml <br>

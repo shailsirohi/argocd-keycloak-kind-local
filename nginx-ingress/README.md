@@ -2,6 +2,10 @@
 
 ssl passthrough has to be enabled for argocd grpc to work. The configuration provided for split ingress in argocd documentation doesn't work. UI login is successfull. However cli login doesn't work
 
+# Certificates
+
+SSL certificates should be provided for tls-secret. Please update kustomization.yaml to point to correct certifacte and private key files
+
 # Enabling ssl passthrough and setting up default tls certificate
 
 1. A tls secret in ingress-nginx needs to be created
