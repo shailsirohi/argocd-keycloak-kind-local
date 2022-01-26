@@ -5,12 +5,13 @@ Each sub directory has its own Readme which explains the action needs to be done
 
 The sequence to follow is:
 1. certificates
-2. nginx-ingress
-3. postgres
-4. keycloak-operator
-5. keycloak-instance
-6. argocd
-7. sso-integration<br>
+2. kind-cluster
+3. nginx-ingress
+4. postgres
+5. keycloak-operator
+6. keycloak-instance
+7. argocd
+8. sso-integration<br>
     7.1 keycloak configuration<br>
     7.2 argocd configuration<br>
 
