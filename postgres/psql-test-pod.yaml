@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: psql-client
+  labels:
+    app: postgres-client
+    usage: testing-connection-string
+spec:
+  containers:
+  - name: psql13-client
+    image: shailsirohi/psql13-client:v2
+    command: ['sh','-c','echo "Hello k8s psql" && sleep 360000']
