@@ -2,7 +2,7 @@ The example is using k8s 1.22 version.
 
 # create kind cluster with 1.22
 
-kind create cluster --config kind.yaml --image kindest/node:v1.22.0@sha256:b8bda84bb3a190e6e028b1760d277454a72267a5454b57db34437c34a588d047
+> kind create cluster --config kind.yaml --image kindest/node:v1.22.0@sha256:b8bda84bb3a190e6e028b1760d277454a72267a5454b57db34437c34a588d047
 
 # Ports and Local storage
 All the ports and storage mount configuration is in kind-ingress-storage.yaml
