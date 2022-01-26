@@ -12,7 +12,7 @@ The sequence to follow is:
 6. keycloak-instance
 7. argocd
 8. sso-integration<br>
-    7.1 keycloak configuration<br>
-    7.2 argocd configuration<br>
+    8.1 keycloak configuration<br>
+    8.2 argocd configuration<br>
 
 All the certs have been removed. So, please make sure the certs are generated and copied inside the appropriate sub-directories inside nginx-ingress and argocd directories. The exact path can be inferred from kustomization.yaml in the aforementioned directories.
