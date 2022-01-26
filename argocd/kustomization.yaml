@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: argocd
+secretGenerator:
+- name: argocd-server-tls
+  namespace: argocd
+  files:
+  - tls.crt=sslcerts/localhost.crt
+  - tls.key=sslcerts/localhost.decrypted.key
+  type: "kubernetes.io/tls"
+- name: argocd-tls-ca
+  namespace: argocd
+  files:
+  - ca.crt=sslcerts/localCA.crt
+  type: Opaque
+generatorOptions:
+  labels:
+    app: nginx-ingress
+  disableNameSuffixHash: true
+resources:
+- argo-ns.yaml
+- argocd-server-cm-params.yaml
+- argocd-deploy-2.2.2.yaml
+#- nginx-http.yaml
+#- nginx-grpc.yaml
+- nginx-ingress-passthrough.yaml

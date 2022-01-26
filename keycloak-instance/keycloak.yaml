@@ -9,7 +9,7 @@ spec:
   instances: 1
   externalAccess:
     enabled: True
-    host: learnk8s.co.in
+    host: keycloak.127-0-0-1.sslip.io
   podDisruptionBudget:
     enabled: True
   # User needs to provision the external database

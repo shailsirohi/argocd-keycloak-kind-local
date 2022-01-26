@@ -19,7 +19,7 @@ Please note POSTGRES_EXTERNAL_ADDRESS must be a valid FQDN or IP. ClusterIP for 
 
 Update the hostname in keycloak.yaml based on the dns names you have selected in certificate.
 
-Please note: Keycloak instance doesn't work with subpaths like hostname/subpath. It has to be a valid dns name without subpath.
+Please note: Keycloak instance doesn't work with non-root paths like hostname/subpath. It has to be a root-path.
 
 
 #logs for debugging
@@ -27,7 +27,7 @@ Please note: Keycloak instance doesn't work with subpaths like hostname/subpath.
 > k logs --follow pod/keycloak-0  > ~/logs/keycloak.txt
 
 # To get admin credentials:
-> kubectl get secret credential-sso-keycloak -o go-template='{{range $k,$v := .data}}{{printf "%s: " $k}}{{if not $v}}{{$v}}{{else}}{{$v | base64decode}}{{end}}{{"\n"}}{{end}}'
+> kubectl get secret credential-sso-keycloak -n keycloak -o go-template='{{range $k,$v := .data}}{{printf "%s: " $k}}{{if not $v}}{{$v}}{{else}}{{$v | base64decode}}{{end}}{{"\n"}}{{end}}'
 
 # If login pasword is not working then, redo a clean install of database.
 

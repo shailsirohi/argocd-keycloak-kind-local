@@ -1,0 +1,9 @@
+data:
+  url: https://argo.127-0-0-1.sslip.io
+  oidc.config: |
+    name: Keycloak
+    issuer: https://keycloak.127-0-0-1.sslip.io/auth/realms/argo-users
+    cliClientID: argocdcli
+    clientID: argocd
+    clientSecret: $oidc.keycloak.clientSecret
+    requestedScopes: ["openid", "profile", "email", "groups"]

@@ -14,7 +14,7 @@ metadata:
   namespace: keycloak
 spec:
   rules:
-  - host: learnk8s.co.in
+  - host: keycloak.127-0-0-1.sslip.io
     http:
       paths:
       - backend:
