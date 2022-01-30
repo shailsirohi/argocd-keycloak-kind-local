@@ -5,7 +5,7 @@
 For this example: I am using a in-cluster postgres instance.
 
 # Database configuration
-The database configuration should be present in the namespace where keycloak instance is creaed. The name of the secret must be keycloak-db-secret. Following values are used for this example:
+The database configuration should be present in the namespace where keycloak instance is created. The name of the secret must be keycloak-db-secret. Following values are used for this example:
 
 - POSTGRES_DATABASE=keycloak
 - POSTGRES_EXTERNAL_ADDRESS=postgres.keycloak.svc.cluster.local
