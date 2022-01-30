@@ -1,7 +1,7 @@
 # keycloak configuration
 
 ## Create new realm
-After loging into the keyclaok UI, there will be master with a small dropdown arrow. click on it and add a new realm.
+After loging into the keycloak UI, there will be master with a small dropdown arrow. click on it and add a new realm.
 
 ## Role, Group and User Configuration
 1. Add a new role. Let's call it argo-admin
